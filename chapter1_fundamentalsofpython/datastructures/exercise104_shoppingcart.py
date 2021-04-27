@@ -24,3 +24,11 @@ while True:
         print('Please only enter "y" or "n".')
 
 # Calculations of the total bill.
+running_sum = 0
+for item in cart:
+    running_sum += cart[item] * prices[item] #quatinty items price
+
+print(f'Your final cart is:')
+for item in cart:
+    print(f'- {cart[item]} {item}(s)')
+print(f'Your final bill is: {running_sum}')
