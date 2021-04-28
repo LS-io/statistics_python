@@ -1,0 +1,3 @@
+## The Tower of Hanoi is a well-known mathematical problem
+# There are three disk stacks where the disks can be placed in, and n disks of different sizes.
+# At the start of the game, the three disks are placed in one single stack in ascending order. You are asked to move the disks from one stack to another, by moving one disk at a time and are not allowed to place a disk on top of another disk, if it's larger than the one below it.
