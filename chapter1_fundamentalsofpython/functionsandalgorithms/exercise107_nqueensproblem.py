@@ -3,8 +3,7 @@
 
 
 # A variable to specify the size of our chessboard
-N = input('Specify the size of the chessboard (number + ENTER): ')
-N = int(N)
+N = int(input('Specify the size of the chessboard (number + ENTER): '))
 
 # Print out the chessboard
 def display_solution(board):
