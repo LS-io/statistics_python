@@ -1,6 +1,7 @@
 ## In this exercise, we will try to find the maximum of an array, or list
 ## To do this, we wil write a function that returns the index and value of the maximum element within a list
 
+
 def get_max(my_list):
     running_max_index = 0
 
