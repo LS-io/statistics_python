@@ -1,4 +1,5 @@
 import threading
+import unittest
 import sys; sys.setswitchinterval(10 ** -10)
 
 class Counter:
@@ -8,7 +9,8 @@ class Counter:
     
     def update(self):
         current_value = self.value
-        # breakpoint
+        ## Comment out the line below for first part of the exercise
+        breakpoint()
         self.value = current_value + 1
     
     def run(self):
@@ -17,8 +19,6 @@ class Counter:
             t.start()
         for t in threads:
             t.join()
-
-import unittest
 
 class TestCounter(unittest.TestCase):
     def setUp(self):
@@ -42,4 +42,9 @@ class TestCounter(unittest.TestCase):
         self.assertEqual(large_counter.value, self.large_params)
     
 if __name__ == '__main__':
-        unittest.main()
+    ## For first part of the exercise
+    #unittest.main()
+
+    ## For second part of the exercise
+    sample_counter = Counter(10)
+    sample_counter.run()
