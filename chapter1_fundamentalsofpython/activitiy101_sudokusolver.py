@@ -8,7 +8,8 @@ import time
 ##
 ## To conclude, we wiill be setting up a sudoku board with a dimension, that is divisible by 3 (since I want to respect the original game)
 ## We could do this also with any other number as a dimension, as long as the produced board is square
-# We ask for the dimension of the board
+
+# The user is asked to specify the dimension of the board
 print("""
 Welcome to Sudoku9!
 In this iteration, I will demonstrate the solver using a Sudoku board of dimension 9x9.
@@ -18,3 +19,9 @@ Input below.
 time.sleep(2)
 N = int(input('Specify the board dimension: '))
 
+# This prints out the empty board
+def display_sudoku(board):
+    for i in range(N):
+        for j in range(N):
+            print(board[i][j], end = '')
+        print()
