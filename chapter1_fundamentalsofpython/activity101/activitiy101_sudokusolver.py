@@ -137,4 +137,5 @@ class SudokuSolver:
             self.display_cell()
 
 solver = SudokuSolver('sudoku_input/sudoku_input_2.txt')
+#solver = SudokuSolver('sudoku_input/sudoku_input_1.txt')
 solver.solve()
