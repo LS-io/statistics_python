@@ -48,4 +48,30 @@ randomint_array = np.random.randint(0, 10, size = (2, 3, 4))
 ## Although calling with separated square brackets also works
 
 
-##
+## Slicing a NumPy array can be done very similarly - by using commas
+## We will create a new, or rather "overwrite" the existing, array in variable a
+a = np.random.rand(2, 3, 4) # We get a random 2-by-3-by-4 matrix
+#print(a)
+#print('-' * 50)
+## We slice with the specified indices
+#print('''The sliced version using a[1, 0:2, 1:] command:
+#''')
+#print(a[1, 0:2, 1:])
+
+
+## Another important syntax is the np.reshape() method, which allows us to change the shape of the array.
+## Keep in mind, that we need to specify a shape that still encompasses the same number of values
+# print(a)
+# print('''
+# The shape of array a:
+# ''', a.shape)
+# print('''
+
+# Let's see what it looks like, when we use the np.reshape(a, (3, 2, 4)) call:
+# ''', np.reshape(a, (3, 2, 4)))
+
+
+## Finally, let's take a look how we can transpose a matrix
+## Transposing a matrix is flipping the elements along the matrix's diagonal
+## In NumPy, this can be done quite simply by calling [array].T
+print(a.T)
