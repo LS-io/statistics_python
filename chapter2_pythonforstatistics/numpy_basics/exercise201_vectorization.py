@@ -45,3 +45,19 @@ def vec_mul():
 # print(min(Timer(vec_mul).repeat(10, 10)))
 # Again, we see that the vectorised approach is much quicker
 
+
+## Now we will shall implement the same comparison, finally comparing the computation of a square root of numbers
+## For this, we need to import the math module to implement with the Python list
+import math
+
+def for_sqrt():
+    return [math.sqrt(item) for item in my_list]
+
+def vec_sqrt():
+    return np.sqrt(my_array)
+
+# print('For-loop square root:')
+# print(min(Timer(for_sqrt).repeat(10, 10)))
+# print('Vectorised square root:')
+# print(min(Timer(vec_sqrt).repeat(10, 10)))
+# While your output might be different, we see that the vectorised operation is considerably quicker
