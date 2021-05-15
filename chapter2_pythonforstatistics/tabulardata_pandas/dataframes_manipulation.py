@@ -38,7 +38,7 @@ methods = pd.DataFrame(data = methods)
 #import numpy as np
 
 ## We read the .csv file by using the pd.read_csv() methond
-df = pd.read_csv('B:/Coding/GitHub/statistics_python/statistics_python/chapter2_pythonforstatistics/tabulardata_pandas/dataset.csv', index_col = 'id')
+df = pd.read_csv('dataset.csv', index_col = 'id')
 #print(df)
 ## We can notice that we have two instances of NaN as an elements in our DataFrame
 ## Normally, NaN is the defaul value for empty cells
