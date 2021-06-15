@@ -29,3 +29,12 @@ In the table below, we can observe the summary of relevant points of difference 
 ___
 ### Categorical data
 If an attribute or a variable is categorical, its values belong to a predetermined and fixed set of possible values. An example is a weather-related dataset, which could consist of discrete values such as *"sunny"*, *"Windy"*, *"cloudy"*, *"rainy"* and so on. A cell in column of such discrete categorical data **must** take the value of one of these possibilites, and can not contain a number or an unrelated string.
+
+Due to the nature of categorical data, the different possible values are not ordinally related, meaning that there is no clear comparison between one or the other value, whereas in numerical data, they are cleary ordered on a numerical scale.
+
+When it comes to modelling, if a variable with an unknown value belongs to a categorical attribute and is to be modelled with a probability distribution, a categorical distribution will be required. Such a distribution describes the probability that the variable belongs to one of the ***K*** possible categories, that are predefined.
+
+When it comes to data processing, an encoding scheme is typically used to *convert* the values from categorical to numerical, so that they can be interpreted by a machine.
+
+For example. some tend to use a simple scheme of assigning each possible discrete value a positive integer and replacing it in their respective place.
+Example below:
