@@ -79,4 +79,7 @@ pd.get_dummies(weather_df['weather'])
 4   0       0       1       0
 ```
 ___
-When it come to various descriptive statistical tools, the mode is typically the only statistic that can be used on categorical data.
+When it come to various descriptive statistical tools, the mode is typically the only statistic that can be used on categorical data.\
+In terms of making predictions, if a categorical attribute is the target of our machine learning pipeline (we want to predict a categorical attribute), then classification models are required. Opposed to regression models (which make predictions on numerical, continuous data), classification models (classifiers for short) only predict amon the possible values for the target attribute.
+
+Last big difference between categorical and numerical data is in the visualisation techniques. Two of the most common visualisation techniques for categorical data are bar charts (including stacked and grouped bar charts) and pie charts. They both focus on the portion of the whole dataset that each unique vales takes up.
