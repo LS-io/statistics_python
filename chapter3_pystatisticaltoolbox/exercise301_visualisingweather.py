@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-weather_df = pd.read_csv('B:/Coding/Github/statistics_python/chapter3_pystatisticaltoolbox/exercise301_data/weather_data.csv')
+weather_df = pd.read_csv('exercise301_data/weather_data.csv')
 ##Remove the full filepath before committing
 #print(weather_df.head(10))
 
