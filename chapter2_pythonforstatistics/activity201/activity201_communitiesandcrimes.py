@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 ## We start by downloading the dataset adn importing it with
 data_url = 'CommViolPredUnnormalizedData.txt'
-## Remove url before commiting
+## Remove the full url before commiting
 raw_data = pd.read_csv(data_url, sep = ',')
 
 ## (2) We want to display the firt five rows of the dataset
