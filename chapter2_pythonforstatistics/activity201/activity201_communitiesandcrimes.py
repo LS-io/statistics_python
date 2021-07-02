@@ -7,7 +7,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 ## We start by downloading the dataset adn importing it with
-data_url = 'B:/Coding/Github/statistics_python/chapter2_pythonforstatistics/activity201/dataset/CommViolPredUnnormalizedData.txt'
+data_url = 'CommViolPredUnnormalizedData.txt'
 ## Remove url before commiting
 raw_data = pd.read_csv(data_url, sep = ',')
 
