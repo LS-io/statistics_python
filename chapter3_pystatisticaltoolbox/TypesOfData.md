@@ -83,3 +83,39 @@ When it come to various descriptive statistical tools, the mode is typically the
 In terms of making predictions, if a categorical attribute is the target of our machine learning pipeline (we want to predict a categorical attribute), then classification models are required. Opposed to regression models (which make predictions on numerical, continuous data), classification models (classifiers for short) only predict amon the possible values for the target attribute.
 
 Last big difference between categorical and numerical data is in the visualisation techniques. Two of the most common visualisation techniques for categorical data are bar charts (including stacked and grouped bar charts) and pie charts. They both focus on the portion of the whole dataset that each unique vales takes up.
+
+#### Binary Data
+Values in a binary attribute can only be **True** or **False**. It is a categorical attribute whose set of possible values contains the two Boolean values mentioned. Boolean values can easily be interpreted by machine learning and mathematical models, so there is usually no need to convert a binary attribute to any other form.\
+To use this feature to its full benefit, we would want to convert any binary data into Boolean values, if it isn't already in that form.\
+Example:
+```
+student_df
+```
+```
+    name    sex     class   gpa num_classes
+0   Alice   female  FY      90  4
+1   Bob     male    SO      93  3
+2   Carol   female  SR      97  4
+3   Dan     male    SO      89  4
+4   Eli     female  JR      95  3
+5   Fran    female  SR      92  2
+```
+In the example of student_df, we see that the **'sex'** column is categorical attribute whose values can only be either **'female'** or **'male'**. To make this data more machine friendly, we will *binarise* the attribute:
+```
+student_df['female_flag'] = student_df['sex'] == 'female'
+student_df = student_df.drop('sex', axis = 1)
+student_df
+```
+The output is:
+```
+    name    class   gpa num_classes female_flag
+0   Alice   FY      90  4           True
+1   Bob     SO      93  3           False
+2   Carol   SR      97  4           True
+3   Dan     SO      89  4           False
+4   Eli     JR      95  3           True
+5   Fran    SR      92  2           True
+```
+*Exercise 301 uses these concepts to look at the weather dataset*
+___
+### Numerical Data
