@@ -36,5 +36,47 @@ When it comes to modelling, if a variable with an unknown value belongs to a cat
 
 When it comes to data processing, an encoding scheme is typically used to *convert* the values from categorical to numerical, so that they can be interpreted by a machine.
 
-For example. some tend to use a simple scheme of assigning each possible discrete value a positive integer and replacing it in their respective place.
+For example, some tend to use a simple scheme of assigning each possible discrete value a positive integer and replacing it in their respective place.
 Example below:
+```
+weather_df
+
+    temp    weather
+0   55      windy
+1   34      cloudy
+2   80      sunny
+3   75      rain
+4   53      sunny
+```
+Here, we can use the **map()** method to effectively encode the weather attributes into numerical values
+```
+weather_df['weather_encoded'] = weather_df['weather'].pam({'windy': 0, 'cloudy': 1, 'sunny': 2, 'rain': 3})
+```
+```
+weather_df
+
+    temp    weather     weather_encoded
+0   55      windy       0
+1   34      cloudy      1
+2   80      sunny       2
+3   75      rain        3
+4   53      sunny       2
+```
+We can that the **weather** column has been converted to numerical values in the **weather_encoded** column via one-to-one mapping. The danger with this method is the implied order of numerical values. This can be especially problematic if the model we are using is interpreting this as true numerical data.\
+For this reason, we must be careful when transforming our categorical attributes into numerical form.
+
+Another technique we can use is *one-hot-encoding*, which creates a new columnd for every unique value in the column that we want to perform one-hot-encoding on. Then, if the row has the corresponding value in the original attribute columnd, we place a value of 1, if not, then value of 0.\
+The example below reiterates how we can implement this in pandas
+```
+pd.get_dummies(weather_df['weather'])
+```
+```
+    cloudy  rain    sunny   windy
+0   0       0       0       1
+1   1       0       0       0
+2   0       0       1       0
+3   0       1       0       0
+4   0       0       1       0
+```
+___
+When it come to various descriptive statistical tools, the mode is typically the only statistic that can be used on categorical data.
