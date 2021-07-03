@@ -119,3 +119,46 @@ The output is:
 *Exercise 301 uses these concepts to look at the weather dataset*
 ___
 ### Numerical Data
+As opposed to categorical data, numerical data contains numerical and continous values or real numbers. Values can take a specific range (positive, negative, between 0 and 1, etc.) and be of any value in this range. Unlike categorical data, where values can only take one out of discretely given set of possible values.
+
+While few probability distributions are fit to be used with categorical data, there are many different possible distribution we can use to deal with numerical data. Some of them are normal distribution (bell-curve distribution), uniform distribution, exponential distribution, the Student's t distributio and other.\
+Each type of distribution is used to represent a different kind of numerical data.\
+Normaly distribution, for example, is often used to model quantities with linear growth, such as height, age, test scores and so on, and exponential distributio models the amount of time between the occurences of a given event.
+
+It is therefore important to understand which specific probability distribution is sutiable for the numerical attribute that we wish to model. Choosing the appropriate distribution allows us to perform a coherent analysis as well as make an accurate prediction.
+
+Additionally, different processing techniques can be applied to numerical data. Two most common include scaling and normalisation.\
+Scaling involves adding and/or multiplying all the values in a numerical attribute by a fixed quantity to scale the range of original data to another range. This is useful when statistical and machine learning models can only handle values within a given range (as between 0 and 1 for example).
+
+Such often used scaling technique is the min-max scaling method.\
+It can be expressed by the following formula, where *a* and *b* are positive numbers:
+
+![\Large X'=a+(b-a)\frac{X-X_{min}}{X_{max}-X_{min}}](https://latex.codecogs.com/svg.image?X^{'}=a&plus;(b-a)\frac{X-X_{min}}{X_{max}-X_{min}})
+
+*X'* and *X* denote the data after and before the transformation, while *X<sub>max</sub>* and *X<sub>min</sub>* dentore the maximum and minimum values within the data respectively. The output of the formula is always greater than *a* and less than *b*.
+
+When it comes to normalisation, it denotes the process of specifically scaling a numerical attribute to the normalised form with respect to its probability distribution. The goal is for us to obtain a transformed dataset that nicely follows the shape of the probability distribution that we have chosen.\
+For example, let's say we have data that follows the normal distribution with a mean of **4** and a standard deviation of **10**. If our model assumes that the standard form of the normal distribution for this data is **0** for the mean and **1** for the standard deviation, it will have difficulties learning from it. Hence, we want to apply the normalisation technique for normally distributed data. We subtract the true mean from the data points and divide the result by the true standard deviation. As a scaling process, this is more generally known as a standard scaler.\
+In a code cell, given the preceding data is already a NumPy array, we can implement this process as follows:
+```
+# Creating our samples as preceding data
+samples = np.random.normal(4, 10, size = 1000)
+
+# Applying the normalisation technique
+normalised_samples = (samples - 4) / 10
+```
+With this technique, the data has successfully shifted to the range we need (centering around mean = 0) without changing the general shape of the data distribution.\
+*As a footnote, in practice when the true mean and true standard deviation are not known, we can help ourselves with an approximation:
+```
+sample_mean = np.mean(samples)
+sample_sd = np.std(samples)
+```
+When we are dealing with a large number of samples, these two techniques offer a good approximation that can be further used for type of transformation. With this, we can now feed our normalised data to our statistical and machine learning models.
+
+Addressing the mean and the standard deviation, these two statistics are usually used to describe numerical data. To fill in the missing values in a numerical attribute, central tendency measures such as the mean and the median are typically used. In some special cases such as a time-series dataset, you can use more complex missing values imputation techniques such as interpolation, where we estimate the missing value to be somewhere *in between* the ones immediately before and after it in a sequence.
+
+When we want ot train a predictive model to target a numerical attribute, regression models are used. Instead of making predictions on which possible categorical values an entry can take like a classifier, a regression model looks for a reasonable prediciton across a continuous numerical range. As such, similar to what we have discussed, we must make sure to only apply regression models on dataset whose target values are numerical attributes.
+
+In terms of visualising numerical data, we have seen a wide range of visualisation techniques that can be used. Apart from histograms, which can be used to describe the distribution of a numerical attribute, line graphs and scatter plots allow us to visualise patterns of an attribute with respect to other attributes. Additionally, heatmaps are used to visualise a 2-dimensional structure which can be applied to represent correlation between numerical attributes in a dataset.
+
+### Ordinal Data
