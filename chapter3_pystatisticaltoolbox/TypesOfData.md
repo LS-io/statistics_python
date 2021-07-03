@@ -160,5 +160,15 @@ Addressing the mean and the standard deviation, these two statistics are usually
 When we want ot train a predictive model to target a numerical attribute, regression models are used. Instead of making predictions on which possible categorical values an entry can take like a classifier, a regression model looks for a reasonable prediciton across a continuous numerical range. As such, similar to what we have discussed, we must make sure to only apply regression models on dataset whose target values are numerical attributes.
 
 In terms of visualising numerical data, we have seen a wide range of visualisation techniques that can be used. Apart from histograms, which can be used to describe the distribution of a numerical attribute, line graphs and scatter plots allow us to visualise patterns of an attribute with respect to other attributes. Additionally, heatmaps are used to visualise a 2-dimensional structure which can be applied to represent correlation between numerical attributes in a dataset.
-
+___
 ### Ordinal Data
+We can say that ordinal data is somewhat a combination of categorical data and numerical data. Its attributes belong to a specific given set (like in categorical data) and the value of those attributes are numerical (as in numerical data, which implies an ordered relationship). Most common examples of ordinal data are test scores (represented with letter or numbers), integer ratings, or quality ratings (e.g. "excellent", "okay", "bad" and so on).
+
+Since entries in an ordinal attribute can only take one out of a specific set of values (as like in categorical data), the same *categorical probability distributions* should be used to model this type. Similarly, missing values are best filled in using the mode of the attribute, and the same visualisation techniques as well.
+
+Other processes might prove different from what we have used for categorical data however. When it comes to data processing, you could potentially assign a one-to-one mapping between each ordinal value and numerical value/range.
+
+If we take the example of letter scores (**"A"**, **"B"**, **"C"** and so on), the letter **"A"** can correspond to the range **[90, 100]** in the raw score, and other letter grades have their own continuous ranges as well. Quality ranking, such as **"excellent"**, **"okay"** and **"bad"** can be mapped to **10**, **5** and **0**, respectivelly, as well. Keep in mind that this type of transformation is undesirable, unless the degree of difference of quality between values can be quantified. This is something to be aware of when dealing with rankings that can have a subjective value.
+
+In terms of which machine learning model to be used for such data and having it predict unseen values of an ordinal attribute, classiefiers are to be used. Since ranking is a unique task that constitutes many different learning structures, considerable effort has been dedicated to *machine-learning ranking*, where models are designed and trained specifically to predict ranking data.
+___
