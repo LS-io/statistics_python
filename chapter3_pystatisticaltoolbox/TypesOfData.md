@@ -65,7 +65,7 @@ weather_df
 We can that the **weather** column has been converted to numerical values in the **weather_encoded** column via one-to-one mapping. The danger with this method is the implied order of numerical values. This can be especially problematic if the model we are using is interpreting this as true numerical data.\
 For this reason, we must be careful when transforming our categorical attributes into numerical form.
 
-Another technique we can use is *one-hot-encoding*, which creates a new columnd for every unique value in the column that we want to perform one-hot-encoding on. Then, if the row has the corresponding value in the original attribute columnd, we place a value of 1, if not, then value of 0.\
+Another technique we can use is *one-hot-encoding*, which creates a new column for every unique value in the column that we want to perform one-hot-encoding on. Then, if the row has the corresponding value in the original attribute column, we place a value of 1, if not, then value of 0.\
 The example below reiterates how we can implement this in pandas
 ```
 pd.get_dummies(weather_df['weather'])
